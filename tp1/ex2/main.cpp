@@ -1,11 +1,12 @@
 #include <iostream>
 #include "Person.hpp"
 int main(){
-    Person p1;
-    p1.first_name = "La Faluche";
-    p1.surname = "Palluche";
+    Person p1("La Faluche", "Palluche");
 
-    std::cout << "La personne s'appelle "<< p1.surname << " " << p1.first_name <<std::endl;
+    std::string f_name = p1.get_first_name();
+    std::string surname = p1.get_surname();
+
+    std::cout << "La personne s'appelle "<< surname << " " << f_name <<std::endl;
 
     return 0;
 }
