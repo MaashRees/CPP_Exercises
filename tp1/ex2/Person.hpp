@@ -14,3 +14,9 @@ private:
     std::string _first_name;
     std::string _surname;
 };
+
+
+/*
+Difficultés:
+Savoir où placé le constructeur et comment declarer dans le .hpp et initialiser dans le .cpp les fonctions d'une classe :  dans le .cpp, faut ecrire -> Classe::nomMethode
+*/
