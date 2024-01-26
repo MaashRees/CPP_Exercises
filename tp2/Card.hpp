@@ -9,4 +9,7 @@ class Card
     public:
         Card(unsigned int value, std::string color);
         void print() const; // pour la q6 : cette fonction ne modifie pas l'objet en paramètre
+        
+        bool operator==(Card c) const;
+        unsigned int get_value();
 };
