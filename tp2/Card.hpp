@@ -8,5 +8,5 @@ class Card
         std::string _color;
     public:
         Card(unsigned int value, std::string color);
-        void print();
+        void print() const; // pour la q6 : cette fonction ne modifie pas l'objet en paramètre
 };
