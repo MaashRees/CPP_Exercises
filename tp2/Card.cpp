@@ -9,7 +9,7 @@ Card::Card(unsigned int value, const std::string& color):
 void Card::print() const{
     std::string value;
     switch(_value){
-        case 1 : {
+        case 16 : {
             value = "As";break;
         }
         case 11 : {
@@ -41,7 +41,7 @@ bool Card::operator<(const Card& c1)const {
 
 std::ostream& operator<<(std::ostream& stream, const Card& c){
     switch(c._value){
-        case 1 : {
+        case 16 : {
             stream << "As";break;
         }
         case 11 : {
