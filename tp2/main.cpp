@@ -14,6 +14,7 @@ int main(){
     std::cout << (c3 < c1) << std::endl; // -> 0
     const Card c4 { 12, "Pique" };
     c4.print();
+    std::cout << c4 << std::endl;
 }
 
 //g++ -o main main.cpp Card.cpp Card.hpp
