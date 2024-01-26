@@ -12,4 +12,5 @@ class Card
         
         bool operator==(Card c) const;
         unsigned int get_value();
+        bool operator<(Card c1)const;
 };
