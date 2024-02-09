@@ -283,6 +283,10 @@ Il contient un `CMakeLists.txt` permettant de compiler le programme.
 
 1. Ouvrez le fichier [3-hrsoft/CMakeLists.txt](3-hrsoft/CMakeLists.txt) et regardez son contenu.  
 Quels sont les exécutables présents dans ce projet ?
+```
+- hrsoft
+- hrsoft-tests
+```
 
 Vous allez maintenant compiler le programme à l'aide de CMake depuis VSCode.
 
