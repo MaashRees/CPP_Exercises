@@ -1,0 +1,3 @@
+/home/2inf1/mensahassiakol/Documents/C++/CPP_Exercises/tp6/build/CMakeFiles/tp6-ex1.dir
+/home/2inf1/mensahassiakol/Documents/C++/CPP_Exercises/tp6/build/CMakeFiles/edit_cache.dir
+/home/2inf1/mensahassiakol/Documents/C++/CPP_Exercises/tp6/build/CMakeFiles/rebuild_cache.dir

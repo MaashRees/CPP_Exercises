@@ -29,9 +29,6 @@ public :
         stream << material._name;
         return stream; 
     }
-    std::string get_name() const{
-        return _name;
-    }
 private:
         std::string _name;
 

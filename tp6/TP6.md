@@ -5,6 +5,7 @@
 - Se familiariser avec l'utilisation des `unique_ptr`
 - Manipuler des pointeurs-observants
 
+```P.S. une chaine de caractères fixe comme "toto" est une l-value car il possede un espace fixe dans la mémoire```
 ## Exercice - Recettes (2h)
 
 Vous allez créer un programme qui vous permet de fabriquer des objets à partir de matériaux suivant une recette.  
@@ -22,19 +23,21 @@ Vous devriez rapidement constater qu'à part le parsing des commandes utilisateu
 
 ```b
 # Configurer le projet dans un dossier de build
-cmake -B <chemin_vers_le_dossier_build> -S <chemin_vers_le_dossier_tp5>
+cmake -B <chemin_vers_le_dossier_build> -S <chemin_vers_le_dossier_tp6>
 
 # Compiler le programme
-cmake --build <chemin_vers_le_dossier_build> --target tp5-ex3
+cmake --build <chemin_vers_le_dossier_build> --target tp6-ex1
 
 # Lancer le programme
-<chemin_vers_le_dossier_build>/tp5-ex3
+<chemin_vers_le_dossier_build>/tp6-ex1
 ```
 
 2. Ouvrez le fichier [`ProgramData.hpp`](./3-recipes/ProgramData.hpp) : il contient la classe `ProgramData`, dont chacune des fonctions est appelée par l'une des commandes utilisateur.  
 Ouvrez maintenant le fichier [`ProgramData.cpp`](./3-recipes/ProgramData.cpp).  
 Pourquoi le programme ne fait rien ? 
-
+```
+On a que le squelette du code et les fonctions sont à écrire par nous même
+```
 ### B. Matériaux
 
 Pour le restant de l'exercice, n'hésitez pas à ajouter les fonctions qui vous sembleraient pertinentes, même si on ne vous les demande pas explicitement. 
