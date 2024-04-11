@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+#include <functional>
+#include <map>
 // Liste des entitées à construire
 std::string desc = R"(Object
 Person
@@ -22,16 +24,29 @@ public:
 class Factory
 {
 public:
-    // using Builder = ...;
 
-    template <typename TDerivedEntity>
-    void register_entity()
-    {}
+    using Builder = std::function<std::unique_ptr<Entity>()>;
 
-    std::unique_ptr<Entity> build(const std::string& id) const { return nullptr; }
+    template <typename TDerivedEntity, typename... Args>
+    void register_entity(const std::string& name, Args&&... args)
+    {   
+        Builder builder = [&args...]() { return std::make_unique<TDerivedEntity>(std::forward<Args>(args)...); };
+        
+        _builders.emplace(name, builder);
+    }
+
+    std::unique_ptr<Entity> build(const std::string& id) const {
+        auto it = _builders.find(id);
+        if (it != _builders.end())
+        {
+            return it->second();
+        }
+        return nullptr;
+    }
 
 private:
-    // ...
+
+    std::map<std::string, Builder> _builders;
 };
 
 class Object : public Entity
@@ -75,6 +90,14 @@ private:
     std::string _species;
 };
 
+class Dog : public Animal
+{
+public:
+    explicit Dog(const std::string& species = "dog")
+        : Animal { std::move(species) }
+    {}
+};
+
 class House : public Object
 {
 public:
@@ -91,8 +114,14 @@ private:
 int main()
 {
     Factory factory;
-    // factory.register_entity<Object>("Object");
-
+    factory.register_entity<Object>("Object");
+    factory.register_entity<Tree>("Tree");
+    factory.register_entity<Person>("Person", "Jean");
+    factory.register_entity<Dog>("Dog");
+    Person  p = Person("Jean");
+    factory.register_entity<House>("House", p);
+    p.set_name("Picsou");
+    
     std::vector<std::unique_ptr<Entity>> entities;
 
     std::stringstream s;
